@@ -1,11 +1,11 @@
 pub struct Config {
     pub flag: bool,         // true -> generate diff, false -> patch
-    pub org_file: String,
-    pub new_file: String,
+    pub org_path: String,
+    pub new_path: String,
 } impl Config {
     pub fn new(args: &[String]) -> Result<Config, &str> {
         let flag: bool;
-        let new_file: String;
+        let new_path: String;
 
         let args_len = args.len();
         
@@ -13,7 +13,7 @@ pub struct Config {
             return Err("Not enough arguments!");
         }
 
-        let org_file: String = args[2].clone();
+        let org_path: String = args[2].clone();
 
         match args[1].chars().nth(0).unwrap() {
             'd' => flag = true,
@@ -22,13 +22,13 @@ pub struct Config {
         }
 
         if flag && args_len == 4 {    // if generate diff
-            new_file = args[3].clone();
+            new_path = args[3].clone();
         } else if !flag {               // if patch
-            new_file = String::new();
+            new_path = String::new();
         } else {
             return Err("File path arguments error");
         }
 
-        Ok(Config { flag, org_file, new_file })
+        Ok(Config { flag, org_path, new_path })
     }
 }

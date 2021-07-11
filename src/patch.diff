@@ -1,0 +1,10 @@
+test.txt
+4 ++--
+
+@@ -2 @@
+- and then a hat
+
+@@ -4, +4 @@
+- It was awesome...
++ It wan't that awesome...
++ but it was pretty cool

@@ -1,2 +1,2 @@
 # dit
-diffs for tig - pseudo
+diffs for tig

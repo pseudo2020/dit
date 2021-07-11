@@ -1,2 +1,2 @@
 # dig
-dig - diffs for tig
+diffs for tig
